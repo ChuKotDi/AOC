@@ -11,7 +11,7 @@ import (
 func readReportsFromFile(filename string) ([][]int, error) {
 	file, err := os.Open(filename)
 	if err != nil {
-		return nil, fmt.Errorf("не удалось открыть файл: %w", err)
+		return nil, fmt.Errorf("the file could not be opened: %w", err)
 	}
 	defer func(file *os.File) {
 		err := file.Close()
@@ -29,7 +29,7 @@ func readReportsFromFile(filename string) ([][]int, error) {
 		for _, num := range nums {
 			level, err := strconv.Atoi(num)
 			if err != nil {
-				return nil, fmt.Errorf("ошибка преобразования числа: %w", err)
+				return nil, fmt.Errorf("number conversion error: %w", err)
 			}
 			levels = append(levels, level)
 		}
@@ -37,7 +37,7 @@ func readReportsFromFile(filename string) ([][]int, error) {
 	}
 
 	if err := scanner.Err(); err != nil {
-		return nil, fmt.Errorf("ошибка чтения файла: %w", err)
+		return nil, fmt.Errorf("file reading error: %w", err)
 	}
 
 	return reports, nil
