@@ -9,12 +9,12 @@ import (
 
 func part1(filename string) {
 	sum1 := 0
-	file, err := os.Open(filename) // Открываем файл для чтения
+	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
 	}
-	defer file.Close() // Закрываем файл после обработки
+	defer file.Close()
 
 	input := bufio.NewScanner(file)
 	for input.Scan() {
@@ -29,12 +29,12 @@ func part1(filename string) {
 
 func part2(filename string) {
 	sum2 := 0
-	file, err := os.Open(filename) // Открываем файл для чтения
+	file, err := os.Open(filename)
 	if err != nil {
 		fmt.Println("Error opening file:", err)
 		return
 	}
-	defer file.Close() // Закрываем файл после обработки
+	defer file.Close()
 
 	input := bufio.NewScanner(file)
 	for input.Scan() {
