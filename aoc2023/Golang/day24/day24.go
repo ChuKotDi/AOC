@@ -42,7 +42,7 @@ func readStonesFromFile(filename string) ([]stone, error) {
 	return stones, nil
 }
 
-func day24Part1(filename string) {
+func part1(filename string) {
 	stones, err := readStonesFromFile(filename)
 	if err != nil {
 		fmt.Println(err)
@@ -52,7 +52,7 @@ func day24Part1(filename string) {
 	fmt.Println("Part 1: intersect =", intersect(stones))
 }
 
-func day24Part2(filename string) {
+func part2(filename string) {
 	stones, err := readStonesFromFile(filename)
 	if err != nil {
 		fmt.Println(err)
@@ -62,10 +62,10 @@ func day24Part2(filename string) {
 	fmt.Println("Part 2: collide =", collide(stones))
 }
 
-func Day24(filenamePart1, filenamePart2 string) {
+func Day(filenamePart1, filenamePart2 string) {
 	fmt.Println("Day 24 Results:")
-	day24Part1(filenamePart1)
-	day24Part2(filenamePart2)
+	part1(filenamePart1)
+	part2(filenamePart2)
 }
 
 const (

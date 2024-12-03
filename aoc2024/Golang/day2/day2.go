@@ -82,7 +82,7 @@ func checkMonotonicity(levels []int, skipIndex int) bool {
 	return increasing || decreasing
 }
 
-func day2Part1(filename string) {
+func part1(filename string) {
 	reports, err := readReportsFromFile(filename)
 	if err != nil {
 		fmt.Println("File read error Part 1:", err)
@@ -99,7 +99,7 @@ func day2Part1(filename string) {
 	fmt.Println("Part 1: safe report count =", safeReportsCount)
 }
 
-func day2Part2(filename string) {
+func part2(filename string) {
 	reports, err := readReportsFromFile(filename)
 	if err != nil {
 		fmt.Println("File read error Part 2:", err)
@@ -116,10 +116,10 @@ func day2Part2(filename string) {
 	fmt.Println("Part 2: safe report count =", safeCount)
 }
 
-func Day2(filenamePart1, filenamePart2 string) {
+func Day(filenamePart1, filenamePart2 string) {
 	fmt.Println("Day 2 Results:")
-	day2Part1(filenamePart1)
-	day2Part2(filenamePart2)
+	part1(filenamePart1)
+	part2(filenamePart2)
 }
 
 func abs(x int) int {

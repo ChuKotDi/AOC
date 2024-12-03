@@ -81,7 +81,7 @@ func calculateSimilarity(leftList, rightList []int) int {
 	return totalSimilarity
 }
 
-func day1Part1(filename string) {
+func part1(filename string) {
 	leftList, rightList, err := readListsFromFile(filename)
 	if err != nil {
 		fmt.Println("File read error Part 1:", err)
@@ -92,7 +92,7 @@ func day1Part1(filename string) {
 	fmt.Printf("Part 1: Total distance = %d\n", totalDistance)
 }
 
-func day1Part2(filename string) {
+func part2(filename string) {
 	leftList, rightList, err := readListsFromFile(filename)
 	if err != nil {
 		fmt.Println("File read error Part 2:", err)
@@ -103,8 +103,8 @@ func day1Part2(filename string) {
 	fmt.Printf("Part 2: Total similarity = %d\n", totalSimilarity)
 }
 
-func Day1(filenamePart1, filenamePart2 string) {
+func Day(filenamePart1, filenamePart2 string) {
 	fmt.Println("Day 1 Results:")
-	day1Part1(filenamePart1)
-	day1Part2(filenamePart2)
+	part1(filenamePart1)
+	part2(filenamePart2)
 }

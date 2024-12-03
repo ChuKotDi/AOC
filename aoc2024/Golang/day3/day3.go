@@ -42,7 +42,7 @@ func sumValidMulExpressions(input string) int {
 	return sum
 }
 
-func day3Part1(filename string) {
+func part1(filename string) {
 	input, err := readInputFromFile(filename)
 	if err != nil {
 		fmt.Println("Fail read file:", err)
@@ -92,7 +92,7 @@ func sumValidMulExpressionsWithConditions(input string) int {
 	return sum
 }
 
-func day3Part2(filename string) {
+func part2(filename string) {
 	input, err := readInputFromFile(filename)
 	if err != nil {
 		fmt.Println("Fail read file:", err)
@@ -104,8 +104,8 @@ func day3Part2(filename string) {
 	fmt.Println("Part2: results sum = ", result)
 }
 
-func Day3(filenamePart1, filenamePart2 string) {
+func Day(filenamePart1, filenamePart2 string) {
 	fmt.Println("Day 3 Results:")
-	day3Part1(filenamePart1)
-	day3Part2(filenamePart2)
+	part1(filenamePart1)
+	part2(filenamePart2)
 }
