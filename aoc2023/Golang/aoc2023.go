@@ -6,6 +6,7 @@ import (
 	aoc2023day24 "AOC/aoc2023/Golang/day24"
 	aoc2023day3 "AOC/aoc2023/Golang/day3"
 	aoc2023day4 "AOC/aoc2023/Golang/day4"
+	aoc2023day5 "AOC/aoc2023/Golang/day5"
 	"fmt"
 )
 
@@ -15,6 +16,7 @@ func Run() {
 	aoc2023day2.Day("aoc2023/Golang/day2/part1_test.in", "aoc2023/Golang/day2/part2_test.in")
 	aoc2023day3.Day("aoc2023/Golang/day3/part1_test.in", "aoc2023/Golang/day3/part2_test.in")
 	aoc2023day4.Day("aoc2023/Golang/day4/part1_test.in")
+	aoc2023day5.Day("aoc2023/Golang/day5/part1_test.in")
 	aoc2023day24.Day("aoc2023/Golang/day24/part1_test.in", "aoc2023/Golang/day24/part2_test.in")
 
 	fmt.Println("*****************************")
