@@ -17,7 +17,7 @@ func Day(filenamePart1, filenamePart2 string) {
 }
 
 func part1(filename string) {
-	fmt.Println("Part 1:")
+	fmt.Print("Part 1: ")
 
 	grid, err := readGridFromFile(filename)
 	if err != nil {
@@ -54,7 +54,7 @@ func part1(filename string) {
 }
 
 func part2(filename string) {
-	fmt.Println("Part 2:")
+	fmt.Print("Part 2: ")
 
 	grid, err := readGridFromFile(filename)
 	if err != nil {
@@ -70,7 +70,7 @@ func part2(filename string) {
 
 	loopPositions := findLoopPositions(grid, startPos, direction)
 
-	fmt.Printf("Number of possible positions for a new obstacle: %d\n", len(loopPositions))
+	fmt.Printf("Number of possible positions for a new obstacle = %d\n", len(loopPositions))
 }
 
 func readGridFromFile(filename string) ([]string, error) {

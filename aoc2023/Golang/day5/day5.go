@@ -68,7 +68,7 @@ func Day(filename string) {
 		}
 	}
 
-	fmt.Println("Day 24 Results:")
+	fmt.Println("Day 5 Results:")
 	fmt.Println("Part 1:", findMinLocation(initialSpans))
 	fmt.Println("Part 2:", findMinLocation(processedSpans))
 }
