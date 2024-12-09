@@ -8,18 +8,21 @@ import (
 	"strings"
 )
 
-func compactAndCalculateChecksum(diskMap string) int {
-	blocks := []int{}
+func getBlocks(diskMap string) (int, []int, map[int]int) {
+	var blocks []int
 	currentID := -1
+	fileLengths := map[int]int{}
+
 	for i := 0; i < len(diskMap); i++ {
 		length, err := strconv.Atoi(string(diskMap[i]))
 		if err != nil {
 			fmt.Printf("Invalid character in input: %s\n", string(diskMap[i]))
-			return 0
+			return -1, nil, nil
 		}
 
 		if i%2 == 0 {
 			currentID++
+			fileLengths[currentID] = length
 			for j := 0; j < length; j++ {
 				blocks = append(blocks, currentID)
 			}
@@ -29,6 +32,12 @@ func compactAndCalculateChecksum(diskMap string) int {
 			}
 		}
 	}
+
+	return currentID, blocks, fileLengths
+}
+
+func compactAndCalculateChecksum(diskMap string) int {
+	_, blocks, _ := getBlocks(diskMap)
 
 	for {
 		moved := false
@@ -93,28 +102,7 @@ func part1(filename string) {
 }
 
 func compactFilesAndCalculateChecksum(diskMap string) int {
-	blocks := []int{}
-	currentID := -1
-	fileLengths := map[int]int{}
-	for i := 0; i < len(diskMap); i++ {
-		length, err := strconv.Atoi(string(diskMap[i]))
-		if err != nil {
-			fmt.Printf("Invalid character in input: %s\n", string(diskMap[i]))
-			return 0
-		}
-
-		if i%2 == 0 {
-			currentID++
-			fileLengths[currentID] = length
-			for j := 0; j < length; j++ {
-				blocks = append(blocks, currentID)
-			}
-		} else {
-			for j := 0; j < length; j++ {
-				blocks = append(blocks, -1)
-			}
-		}
-	}
+	currentID, blocks, fileLengths := getBlocks(diskMap)
 
 	for fileID := currentID; fileID >= 0; fileID-- {
 		fileLength := fileLengths[fileID]
