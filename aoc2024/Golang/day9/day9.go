@@ -36,6 +36,17 @@ func getBlocks(diskMap string) (int, []int, map[int]int) {
 	return currentID, blocks, fileLengths
 }
 
+func getChecksum(blocks []int) int {
+	checksum := 0
+	for pos, fileID := range blocks {
+		if fileID != -1 {
+			checksum += pos * fileID
+		}
+	}
+
+	return checksum
+}
+
 func compactAndCalculateChecksum(diskMap string) int {
 	_, blocks, _ := getBlocks(diskMap)
 
@@ -65,14 +76,7 @@ func compactAndCalculateChecksum(diskMap string) int {
 		}
 	}
 
-	checksum := 0
-	for pos, fileID := range blocks {
-		if fileID != -1 {
-			checksum += pos * fileID
-		}
-	}
-
-	return checksum
+	return getChecksum(blocks)
 }
 
 func readInput(filename string) (string, error) {
@@ -144,14 +148,7 @@ func compactFilesAndCalculateChecksum(diskMap string) int {
 		}
 	}
 
-	checksum := 0
-	for pos, fileID := range blocks {
-		if fileID != -1 {
-			checksum += pos * fileID
-		}
-	}
-
-	return checksum
+	return getChecksum(blocks)
 }
 
 func part2(filename string) {
