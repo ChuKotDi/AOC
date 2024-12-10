@@ -15,7 +15,8 @@ func readMap(filename string) [][]rune {
 	defer func(file *os.File) {
 		err := file.Close()
 		if err != nil {
-
+			fmt.Println("Error reading input:", err)
+			return
 		}
 	}(file)
 
